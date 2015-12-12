@@ -1,0 +1,60 @@
+{
+    "c_source_filters": [
+        "../../../glib/gallocator.h", 
+        "../../../glib/gdatasetprivate.h", 
+        "../../../glib/glibintl.h", 
+        "../../../glib/gbsearcharray.h", 
+        "../../../glib/glib-private.h", 
+        "../../../glib/gthreadprivate.h", 
+        "../../../glib/gunibreak.h", 
+        "../../../glib/gunicomp.h", 
+        "../../../glib/gunidecomp.h", 
+        "../../../glib/gunichartables.h", 
+        "../../../glib/glib_probes.h", 
+        "../../../glib/glib_trace.h", 
+        "../../../glib/libcharset.h", 
+        "../../../glib/gdebug.h", 
+        "../../../glib/gprintfint.h", 
+        "../../../glib/gmirroringtable.h", 
+        "../../../glib/gscripttable.h", 
+        "../../../glib/gbytesprivate.h", 
+        "../../../glib/gvariant-internal.h", 
+        "../../../glib/gvariant-serialiser.h", 
+        "../../../glib/gvariant-core.h", 
+        "../../../glib/gvarianttypeinfo.h", 
+        "../../../glib/gwakeup.h", 
+        "../../../glib/gtranslit-data.h", 
+        "../../../glib/glib-init.h", 
+        "../../../glib/gconstructor.h", 
+        "../../../glib/valgrind.h", 
+        "../../../glib/gunicodeprivate.h", 
+        "../../../gmodule/gmoduleconf.h"
+    ], 
+    "c_sources": [
+        "../../../glib/glib.h", 
+        "../../../glib/*.c", 
+        "../../../glib/*.h", 
+        "../../../gmodule/*.c", 
+        "../../../gmodule/*.h"
+    ], 
+    "index": "markdown_files/index.markdown", 
+    "extra_c_flags": [
+        "-DGLIB_COMPILATION", 
+        "-I../../..", 
+        "-I../../../glib", 
+        "-DHAVE_CONFIG_H", 
+        "-DG_LOG_DOMAIN=\"GLib\"", 
+        "-DPCRE_STATIC", 
+        "-DGETTEXT_PACKAGE"
+    ], 
+    "output_format": "html", 
+    "languages": [
+        "c", 
+        "python", 
+        "javascript"
+    ], 
+    "gi_index": "gobject-api.markdown", 
+    "output": "html", 
+    "gir_file": "../../../../gobject-introspection/GLib-2.0.gir", 
+    "git_repo": "../../.."
+}
