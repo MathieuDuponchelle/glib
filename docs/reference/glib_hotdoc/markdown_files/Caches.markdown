@@ -1,0 +1,12 @@
+### Caches
+
+* [GCache]()
+* [g_cache_new]()
+* [g_cache_insert]()
+* [g_cache_remove]()
+* [g_cache_destroy]()
+* [g_cache_key_foreach]()
+* [g_cache_value_foreach]()
+* [GCacheDestroyFunc]()
+* [GCacheDupFunc]()
+* [GCacheNewFunc]()

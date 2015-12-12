@@ -1,0 +1,15 @@
+### Relations_and_Tuples
+
+* [GRelation]()
+* [g_relation_new]()
+* [g_relation_index]()
+* [g_relation_insert]()
+* [g_relation_exists]()
+* [g_relation_count]()
+* [g_relation_select]()
+* [g_relation_delete]()
+* [g_relation_destroy]()
+* [g_relation_print]()
+* [GTuples]()
+* [g_tuples_destroy]()
+* [g_tuples_index]()
