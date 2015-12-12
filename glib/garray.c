@@ -42,47 +42,7 @@
 #include "gqsort.h"
 
 
-/**
- * SECTION:arrays
- * @title: Arrays
- * @short_description: arrays of arbitrary elements which grow
- *     automatically as elements are added
- *
- * Arrays are similar to standard C arrays, except that they grow
- * automatically as elements are added.
- *
- * Array elements can be of any size (though all elements of one array
- * are the same size), and the array can be automatically cleared to
- * '0's and zero-terminated.
- *
- * To create a new array use g_array_new().
- *
- * To add elements to an array, use g_array_append_val(),
- * g_array_append_vals(), g_array_prepend_val(), and
- * g_array_prepend_vals().
- *
- * To access an element of an array, use g_array_index().
- *
- * To set the size of an array, use g_array_set_size().
- *
- * To free an array, use g_array_free().
- *
- * Here is an example that stores integers in a #GArray:
- * |[<!-- language="C" -->
- *   GArray *garray;
- *   gint i;
- *   // We create a new array to store gint values.
- *   // We don't want it zero-terminated or cleared to 0's.
- *   garray = g_array_new (FALSE, FALSE, sizeof (gint));
- *   for (i = 0; i < 10000; i++)
- *     g_array_append_val (garray, i);
- *   for (i = 0; i < 10000; i++)
- *     if (g_array_index (garray, gint, i) != i)
- *       g_print ("ERROR: got %d instead of %d\n",
- *                g_array_index (garray, gint, i), i);
- *   g_array_free (garray, TRUE);
- * ]|
- */
+
 
 #define MIN_ARRAY_SIZE  16
 
@@ -785,53 +745,7 @@ g_array_maybe_expand (GRealArray *array,
     }
 }
 
-/**
- * SECTION:arrays_pointer
- * @title: Pointer Arrays
- * @short_description: arrays of pointers to any type of data, which
- *     grow automatically as new elements are added
- *
- * Pointer Arrays are similar to Arrays but are used only for storing
- * pointers.
- *
- * If you remove elements from the array, elements at the end of the
- * array are moved into the space previously occupied by the removed
- * element. This means that you should not rely on the index of particular
- * elements remaining the same. You should also be careful when deleting
- * elements while iterating over the array.
- *
- * To create a pointer array, use g_ptr_array_new().
- *
- * To add elements to a pointer array, use g_ptr_array_add().
- *
- * To remove elements from a pointer array, use g_ptr_array_remove(),
- * g_ptr_array_remove_index() or g_ptr_array_remove_index_fast().
- *
- * To access an element of a pointer array, use g_ptr_array_index().
- *
- * To set the size of a pointer array, use g_ptr_array_set_size().
- *
- * To free a pointer array, use g_ptr_array_free().
- *
- * An example using a #GPtrArray:
- * |[<!-- language="C" -->
- *   GPtrArray *array;
- *   gchar *string1 = "one";
- *   gchar *string2 = "two";
- *   gchar *string3 = "three";
- *
- *   array = g_ptr_array_new ();
- *   g_ptr_array_add (array, (gpointer) string1);
- *   g_ptr_array_add (array, (gpointer) string2);
- *   g_ptr_array_add (array, (gpointer) string3);
- *
- *   if (g_ptr_array_index (array, 0) != (gpointer) string1)
- *     g_print ("ERROR: got %p instead of %p\n",
- *              g_ptr_array_index (array, 0), string1);
- *
- *   g_ptr_array_free (array, TRUE);
- * ]|
- */
+
 
 typedef struct _GRealPtrArray  GRealPtrArray;
 
@@ -1502,44 +1416,7 @@ g_ptr_array_foreach (GPtrArray *array,
     (*func) (array->pdata[i], user_data);
 }
 
-/**
- * SECTION:arrays_byte
- * @title: Byte Arrays
- * @short_description: arrays of bytes
- *
- * #GByteArray is a mutable array of bytes based on #GArray, to provide arrays
- * of bytes which grow automatically as elements are added.
- *
- * To create a new #GByteArray use g_byte_array_new(). To add elements to a
- * #GByteArray, use g_byte_array_append(), and g_byte_array_prepend().
- *
- * To set the size of a #GByteArray, use g_byte_array_set_size().
- *
- * To free a #GByteArray, use g_byte_array_free().
- *
- * An example for using a #GByteArray:
- * |[<!-- language="C" -->
- *   GByteArray *gbarray;
- *   gint i;
- *
- *   gbarray = g_byte_array_new ();
- *   for (i = 0; i < 10000; i++)
- *     g_byte_array_append (gbarray, (guint8*) "abcd", 4);
- *
- *   for (i = 0; i < 10000; i++)
- *     {
- *       g_assert (gbarray->data[4*i] == 'a');
- *       g_assert (gbarray->data[4*i+1] == 'b');
- *       g_assert (gbarray->data[4*i+2] == 'c');
- *       g_assert (gbarray->data[4*i+3] == 'd');
- *     }
- *
- *   g_byte_array_free (gbarray, TRUE);
- * ]|
- *
- * See #GBytes if you are interested in an immutable object representing a
- * sequence of bytes.
- */
+
 
 /**
  * GByteArray:

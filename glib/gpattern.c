@@ -27,27 +27,7 @@
 #include "gunicode.h"
 #include "gutils.h" 
 
-/**
- * SECTION:patterns
- * @title: Glob-style pattern matching
- * @short_description: matches strings against patterns containing '*'
- *                     (wildcard) and '?' (joker)
- *
- * The g_pattern_match* functions match a string
- * against a pattern containing '*' and '?' wildcards with similar
- * semantics as the standard glob() function: '*' matches an arbitrary,
- * possibly empty, string, '?' matches an arbitrary character.
- *
- * Note that in contrast to glob(), the '/' character can be matched by
- * the wildcards, there are no '[...]' character ranges and '*' and '?'
- * can not be escaped to include them literally in a pattern.
- *
- * When multiple strings must be matched against the same pattern, it
- * is better to compile the pattern to a #GPatternSpec using
- * g_pattern_spec_new() and use g_pattern_match_string() instead of
- * g_pattern_match_simple(). This avoids the overhead of repeated
- * pattern compilation.
- **/
+
 
 /**
  * GPatternSpec:

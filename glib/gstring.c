@@ -39,24 +39,7 @@
 #include "gprintf.h"
 
 
-/**
- * SECTION:strings
- * @title: Strings
- * @short_description: text buffers which grow automatically
- *     as text is added
- *
- * A #GString is an object that handles the memory management of a C
- * string for you.  The emphasis of #GString is on text, typically
- * UTF-8.  Crucially, the "str" member of a #GString is guaranteed to
- * have a trailing nul character, and it is therefore always safe to
- * call functions such as strchr() or g_strdup() on it.
- *
- * However, a #GString can also hold arbitrary binary data, because it
- * has a "len" member, which includes any possible embedded nul
- * characters in the data.  Conceptually then, #GString is like a
- * #GByteArray with the addition of many convenience methods for text,
- * and a guaranteed nul terminator.
- */
+
 
 /**
  * GString:

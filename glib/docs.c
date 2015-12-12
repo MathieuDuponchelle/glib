@@ -25,30 +25,7 @@
 
 /* Basic types {{{1 */
 
-/**
- * SECTION:types
- * @title: Basic Types
- * @short_description: standard GLib types, defined for ease-of-use
- *     and portability
- *
- * GLib defines a number of commonly used types, which can be divided
- * into 4 groups:
- * - New types which are not part of standard C (but are defined in
- *   various C standard library header files) - #gboolean, #gsize,
- *   #gssize, #goffset, #gintptr, #guintptr.
- * - Integer types which are guaranteed to be the same size across
- *   all platforms - #gint8, #guint8, #gint16, #guint16, #gint32,
- *   #guint32, #gint64, #guint64.
- * - Types which are easier to use than their standard C counterparts -
- *   #gpointer, #gconstpointer, #guchar, #guint, #gushort, #gulong.
- * - Types which correspond exactly to standard C types, but are
- *   included for completeness - #gchar, #gint, #gshort, #glong,
- *   #gfloat, #gdouble.
- *
- * GLib also defines macros for the limits of some of the standard
- * integer and floating point types, as well as macros for suitable
- * printf() formats for these types.
- */
+
 
 /**
  * gboolean:
@@ -722,47 +699,7 @@
 
 /* Type conversion {{{1 */
 
-/**
- * SECTION:type_conversion
- * @title: Type Conversion Macros
- * @short_description: portably storing integers in pointer variables
- *
- * Many times GLib, GTK+, and other libraries allow you to pass "user
- * data" to a callback, in the form of a void pointer. From time to time
- * you want to pass an integer instead of a pointer. You could allocate
- * an integer, with something like:
- * |[<!-- language="C" -->
- *   int *ip = g_new (int, 1);
- *   *ip = 42;
- * ]|
- * But this is inconvenient, and it's annoying to have to free the
- * memory at some later time.
- *
- * Pointers are always at least 32 bits in size (on all platforms GLib
- * intends to support). Thus you can store at least 32-bit integer values
- * in a pointer value. Naively, you might try this, but it's incorrect:
- * |[<!-- language="C" -->
- *   gpointer p;
- *   int i;
- *   p = (void*) 42;
- *   i = (int) p;
- * ]|
- * Again, that example was not correct, don't copy it.
- * The problem is that on some systems you need to do this:
- * |[<!-- language="C" -->
- *   gpointer p;
- *   int i;
- *   p = (void*) (long) 42;
- *   i = (int) (long) p;
- * ]|
- * The GLib macros GPOINTER_TO_INT(), GINT_TO_POINTER(), etc. take care
- * to do the right thing on the every platform.
- *
- * Warning: You may not store pointers in integers. This is not
- * portable in any way, shape or form. These macros only allow storing
- * integers in pointers, and only preserve 32 bits of the integer; values
- * outside the range of a 32-bit integer will be mangled.
- */
+
 
 /**
  * GINT_TO_POINTER:
@@ -821,40 +758,7 @@
  
 /* Byte order {{{1 */
 
-/**
- * SECTION:byte_order
- * @title: Byte Order Macros
- * @short_description: a portable way to convert between different byte orders
- *
- * These macros provide a portable way to determine the host byte order
- * and to convert values between different byte orders.
- *
- * The byte order is the order in which bytes are stored to create larger
- * data types such as the #gint and #glong values.
- * The host byte order is the byte order used on the current machine.
- *
- * Some processors store the most significant bytes (i.e. the bytes that
- * hold the largest part of the value) first. These are known as big-endian
- * processors. Other processors (notably the x86 family) store the most
- * significant byte last. These are known as little-endian processors.
- *
- * Finally, to complicate matters, some other processors store the bytes in
- * a rather curious order known as PDP-endian. For a 4-byte word, the 3rd
- * most significant byte is stored first, then the 4th, then the 1st and
- * finally the 2nd.
- *
- * Obviously there is a problem when these different processors communicate
- * with each other, for example over networks or by using binary file formats.
- * This is where these macros come in. They are typically used to convert
- * values into a byte order which has been agreed on for use when
- * communicating between different processors. The Internet uses what is
- * known as 'network byte order' as the standard byte order (which is in
- * fact the big-endian byte order).
- *
- * Note that the byte order conversion macros may evaluate their arguments
- * multiple times, thus you should not use them with arguments which have
- * side-effects.
- */
+
 
 /**
  * G_BYTE_ORDER:
@@ -1425,22 +1329,7 @@
  
 /* Numerical Definitions {{{1 */
 
-/**
- * SECTION:numerical
- * @title: Numerical Definitions
- * @short_description: mathematical constants, and floating point decomposition
- *
- * GLib offers mathematical constants such as #G_PI for the value of pi;
- * many platforms have these in the C library, but some don't, the GLib
- * versions always exist.
- *
- * The #GFloatIEEE754 and #GDoubleIEEE754 unions are used to access the
- * sign, mantissa and exponent of IEEE floats and doubles. These unions are
- * defined as appropriate for a given platform. IEEE floats and doubles are
- * supported (used for storage) by at least Intel, PPC and Sparc. See
- * [IEEE 754-2008](http://en.wikipedia.org/wiki/IEEE_float)
- * for more information about IEEE number formats.
- */
+
 
 /**
  * G_IEEE754_FLOAT_BIAS:
@@ -1524,13 +1413,7 @@
  
 /* Macros {{{1 */
 
-/**
- * SECTION:macros
- * @title: Standard Macros
- * @short_description: commonly-used macros
- *
- * These macros provide a few commonly-used features.
- */
+
 
 /**
  * G_OS_WIN32:
@@ -1714,14 +1597,7 @@
  
 /* Miscellaneous Macros {{{1 */
 
-/**
- * SECTION:macros_misc
- * @title: Miscellaneous Macros
- * @short_description: specialized macros which are not used often
- *
- * These macros provide more specialized features which are not
- * needed so often by application programmers.
- */
+
 
 /**
  * G_INLINE_FUNC:
@@ -2536,15 +2412,7 @@
 
 /* Windows Compatibility Functions {{{1 */
 
-/**
- * SECTION:windows
- * @title: Windows Compatibility Functions
- * @short_description: UNIX emulation on Windows
- *
- * These functions provide some level of UNIX emulation on the
- * Windows platform. If your application really needs the POSIX
- * APIs, we suggest you try the Cygwin project.
- */
+
 
 /**
  * MAXPATHLEN:

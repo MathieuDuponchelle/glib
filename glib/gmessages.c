@@ -26,24 +26,7 @@
  * MT safe
  */
 
-/**
- * SECTION:warnings
- * @Title: Message Output and Debugging Functions
- * @Short_description: functions to output messages and help debug applications
- *
- * These functions provide support for outputting messages.
- *
- * The g_return family of macros (g_return_if_fail(),
- * g_return_val_if_fail(), g_return_if_reached(),
- * g_return_val_if_reached()) should only be used for programming
- * errors, a typical use case is checking for invalid parameters at
- * the beginning of a public function. They should not be used if
- * you just mean "if (error) return", they should only be used if
- * you mean "if (bug in program) return". The program behavior is
- * generally considered undefined after one of these checks fails.
- * They are not intended for normal control flow, only to give a
- * perhaps-helpful warning before giving up.
- */
+
 
 #include "config.h"
 
@@ -80,18 +63,7 @@
 #endif
 
 
-/**
- * SECTION:messages
- * @title: Message Logging
- * @short_description: versatile support for logging messages
- *     with different levels of importance
- *
- * These functions provide support for logging error messages
- * or messages used for debugging.
- *
- * There are several built-in levels of messages, defined in
- * #GLogLevelFlags. These can be extended with user-defined levels.
- */
+
 
 /**
  * G_LOG_DOMAIN:
