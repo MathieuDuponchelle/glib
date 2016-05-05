@@ -36,15 +36,7 @@
 #include "gtestutils.h"
 #include "gslice.h"
 
-/**
- * SECTION:hooks
- * @title: Hook Functions
- * @short_description: support for manipulating lists of hook functions
- *
- * The #GHookList, #GHook and their related functions provide support for
- * lists of hook functions. Functions can be added and removed from the lists,
- * and the list of hook functions can be invoked.
- */
+
 
 /**
  * GHookList:

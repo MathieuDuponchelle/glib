@@ -265,18 +265,29 @@
         "../../../gmodule/gmodule-dyld.c"
     ], 
     "extra_c_flags": [
-        "-DGLIB_COMPILATION",
-        "-I../../..",
-        "-I../../../glib",
-        "-DHAVE_CONFIG_H",
-        "-DG_LOG_DOMAIN=\"GLib\"",
-        "-DPCRE_STATIC",
+        "-DGLIB_COMPILATION", 
+        "-I../../..", 
+        "-I../../../glib", 
+        "-DHAVE_CONFIG_H", 
+        "-DG_LOG_DOMAIN=\"GLib\"", 
+        "-DPCRE_STATIC", 
         "-DGETTEXT_PACKAGE"
-    ],
+    ], 
     "gi_index": "gi-index.markdown", 
     "gi_sources": [
         "../../../../gobject-introspection/GLib-2.0.gir"
     ], 
+    "gtk_doc_escape_html": true, 
     "index": "markdown_files/index.markdown", 
+    "languages": [
+        "c", 
+        "python", 
+        "javascript"
+    ], 
+    "output": "built_doc", 
+    "page_parser_escape_html": true, 
+    "project_name": "glib",
+    "project_version": "2.0",
+    "devhelp_activate": true,
     "sitemap": "sitemap.txt"
 }

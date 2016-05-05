@@ -26,24 +26,7 @@
 
 #include "gtrashstack.h"
 
-/**
- * SECTION:trash_stack
- * @title: Trash Stacks
- * @short_description: maintain a stack of unused allocated memory chunks
- *
- * A #GTrashStack is an efficient way to keep a stack of unused allocated
- * memory chunks. Each memory chunk is required to be large enough to hold
- * a #gpointer. This allows the stack to be maintained without any space
- * overhead, since the stack pointers can be stored inside the memory chunks.
- *
- * There is no function to create a #GTrashStack. A %NULL #GTrashStack*
- * is a perfectly valid empty stack.
- *
- * There is no longer any good reason to use #GTrashStack.  If you have
- * extra pieces of memory, free() them and allocate them again later.
- *
- * Deprecated: 2.48: #GTrashStack is deprecated without replacement
- */
+
 
 /**
  * GTrashStack:

@@ -34,21 +34,7 @@
 #include "ghash.h"
 #include "gtestutils.h"
 
-/**
- * SECTION:caches
- * @title: Caches
- * @short_description: caches allow sharing of complex data structures
- *                     to save resources
- *
- * A #GCache allows sharing of complex data structures, in order to
- * save system resources.
- *
- * GCache uses keys and values. A GCache key describes the properties
- * of a particular resource. A GCache value is the actual resource.
- *
- * GCache has been marked as deprecated, since this API is rarely
- * used and not very actively maintained.
- */
+
 
 typedef struct _GCacheNode  GCacheNode;
 

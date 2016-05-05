@@ -31,17 +31,7 @@
 
 #include "config.h"
 
-/**
- * SECTION:gurifuncs
- * @title: URI Functions
- * @short_description: manipulating URIs
- *
- * Functions for manipulating Universal Resource Identifiers (URIs) as
- * defined by
- * [RFC 3986](http://www.ietf.org/rfc/rfc3986.txt).
- * It is highly recommended that you have read and
- * understand RFC 3986 for understanding this API.
- */
+
 
 static int
 unescape_character (const char *scanner)

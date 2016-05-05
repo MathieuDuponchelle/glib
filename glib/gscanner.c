@@ -52,14 +52,7 @@
 #endif
 
 
-/**
- * SECTION:scanner
- * @title: Lexical Scanner
- * @short_description: a general purpose lexical scanner
- *
- * The #GScanner and its associated functions provide a
- * general purpose lexical scanner.
- */
+
 
 /**
  * GScannerMsgFunc:

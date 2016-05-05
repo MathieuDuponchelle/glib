@@ -55,43 +55,7 @@
 #include "glibintl.h"
 
 
-/**
- * SECTION:string_utils
- * @title: String Utility Functions
- * @short_description: various string-related functions
- *
- * This section describes a number of utility functions for creating,
- * duplicating, and manipulating strings.
- *
- * Note that the functions g_printf(), g_fprintf(), g_sprintf(),
- * g_snprintf(), g_vprintf(), g_vfprintf(), g_vsprintf() and g_vsnprintf()
- * are declared in the header `gprintf.h` which is not included in `glib.h`
- * (otherwise using `glib.h` would drag in `stdio.h`), so you'll have to
- * explicitly include `<glib/gprintf.h>` in order to use the GLib
- * printf() functions.
- *
- * ## String precision pitfalls # {#string-precision}
- *
- * While you may use the printf() functions to format UTF-8 strings,
- * notice that the precision of a \%Ns parameter is interpreted
- * as the number of bytes, not characters to print. On top of that,
- * the GNU libc implementation of the printf() functions has the
- * "feature" that it checks that the string given for the \%Ns
- * parameter consists of a whole number of characters in the current
- * encoding. So, unless you are sure you are always going to be in an
- * UTF-8 locale or your know your text is restricted to ASCII, avoid
- * using \%Ns. If your intention is to format strings for a
- * certain number of columns, then \%Ns is not a correct solution
- * anyway, since it fails to take wide characters (see g_unichar_iswide())
- * into account.
- *
- * Note also that there are various printf() parameters which are platform
- * dependent. GLib provides platform independent macros for these parameters
- * which should be used instead. A common example is %G_GUINT64_FORMAT, which
- * should be used instead of `%llu` or similar parameters for formatting
- * 64-bit integers. These macros are all named `G_*_FORMAT`; see
- * [Basic Types][glib-Basic-Types].
- */
+
 
 /**
  * g_ascii_isalnum:

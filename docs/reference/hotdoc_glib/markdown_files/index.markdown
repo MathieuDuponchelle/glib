@@ -1,3 +1,3 @@
-## Welcome to our documentation!
+## GLib Reference Manual
 
-### [API Reference](gobject-api)
+# GLib Tools
